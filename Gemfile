@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-gem 'pg', '~>0.11'
+
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # Use Active Storage variant
@@ -53,6 +53,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'pg', '~>0.11'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
