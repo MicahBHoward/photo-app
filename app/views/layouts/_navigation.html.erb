@@ -5,20 +5,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-collapse collapse navbar-responsive-collapse" >
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
-      <ul class="nav navbar-right col-md-5">
+      <ul class="navbar-nav ml-auto">
 
         <% if current_user %>
 
-        <li class="col-md-5 user-name">
+        <li class="nav-item user-name">
 
         <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
 
@@ -26,15 +26,13 @@
 
         </li>
 
-        <li class="col-md-1"> </li>
-
-        <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+        <li class="nav-item logout"><%= link_to('Logout', destroy_user_session_path,
 
         class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
 
         <% else %>
 
-        <li class="col-md-4 pull-right">
+        <li class="nav-item">
 
         <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
 
